@@ -23,6 +23,7 @@ export class CsszoomAppComponent implements OnInit {
   title = 'csszoom works!';
   isClicked:boolean = false;
   elements:Element[];
+  zoom:any;
 
   ngOnInit():any {
     var e1 = new Element();
@@ -47,6 +48,8 @@ export class CsszoomAppComponent implements OnInit {
     this.elements = [
       e1, e2
     ];
+
+    this.setZoom(1);
   }
 
   clicked(event) {
@@ -64,7 +67,13 @@ export class CsszoomAppComponent implements OnInit {
   slide(tx:number, ty:number) {
     for (let e of this.elements) {
       e.style.transform = "translate(" + tx + "px," + ty + "px)";
-      // e.style.transform += " scale(5)"
+      this.setZoom(12);
     }
+  }
+
+  setZoom(z: number) {
+    this.zoom = {
+      transform: "scale("+z+")"
+    };
   }
 }

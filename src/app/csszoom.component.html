@@ -3,8 +3,10 @@
 </h1>
 
 <div id="can">
-  <div *ngFor="let e of elements; let i = index"
-       [ngStyle]="e.style" class="elt" (click)="clicked($event)">
-    {{e.txt}}
+  <div id="zoomcanvas" [ngStyle]="zoom">
+    <div *ngFor="let e of elements; let i = index"
+         [ngStyle]="e.style" class="elt" (click)="clicked($event)">
+      {{e.txt}}
+    </div>
   </div>
 </div>
