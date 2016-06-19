@@ -1,0 +1,13 @@
+#can {
+  width: 500px;
+  height: 400px;
+
+  background-color: lightcoral;
+
+  position: relative;
+}
+
+.elt {
+  position: absolute;
+  transition: all 1s;
+}
